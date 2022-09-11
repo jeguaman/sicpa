@@ -57,9 +57,4 @@ export class WebApiService {
     return throwError(error);
   }
 
-
-  // Puth call method 
-  // Param 1 : url
-  // Param 2 : model
-
 }

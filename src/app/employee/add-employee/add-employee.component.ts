@@ -23,7 +23,7 @@ export class AddEmployeeComponent implements OnInit {
   AddEmployee(isValid: any) {
     this.isSubmitted = true;
     if (isValid) {
-      this.httpProvider.saveEmployee(this.addEmployeeForm).subscribe(async data => {
+      this.httpProvider.saveEmployees(this.addEmployeeForm).subscribe(async data => {
         if (data != null && data.body != null) {
           if (data != null && data.status === 201 ) {
             this.toastr.success("Employee was added");

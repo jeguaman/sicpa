@@ -6,9 +6,15 @@ var apiUrl = "http://localhost:8090/sicpa/api";
 
 var httpLink = {
   getAllEmployees: apiUrl + "/employees",
+  getAllDepartments: apiUrl + "/departments",
+  getAllEnterprises: apiUrl + "/enterprises",
   //deleteEmployeeById: apiUrl + "/api/employee/deleteEmployeeById",
   getEmployeeDetailById: apiUrl + "/employees/",
-  saveEmployee: apiUrl + "/employees/register"
+  getDepartmentsDetailById: apiUrl + "/departments/",
+  getEnterprisesDetailById: apiUrl + "/enterprises/",
+  saveEmployee: apiUrl + "/employees/register",
+  saveDepartments: apiUrl + "/departments/register",
+  saveEnterprises: apiUrl + "/enterprises/register"
 }
 
 @Injectable({
@@ -23,11 +29,36 @@ export class HttpProviderService {
   /*public deleteEmployeeById(model: any): Observable<any> {
     return this.webApiService.post(httpLink.deleteEmployeeById + '?employeeId=' + model, "");
   }*/
-  public getEmployeeDetailById(model: number): Observable<any> {    
+  public getEmployeeDetailById(model: number): Observable<any> {
     return this.webApiService.get(httpLink.getEmployeeDetailById + model);
   }
-  public saveEmployee(model: any): Observable<any> {
-    console.log("MOdel:" + model);
+  public saveEmployees(model: any): Observable<any> {
     return this.webApiService.post(httpLink.saveEmployee, model);
+  }
+
+  /*
+  Departments
+  */
+  public getAllDepartments(): Observable<any> {
+    return this.webApiService.get(httpLink.getAllDepartments);
+  }
+  public getDepartmentsDetailById(model: number): Observable<any> {
+    return this.webApiService.get(httpLink.getDepartmentsDetailById + model);
+  }
+  public saveDepartments(model: any): Observable<any> {
+    return this.webApiService.post(httpLink.saveDepartments, model);
+  }
+
+  /*
+   Enterprises
+   */
+  public getAllEnterprises(): Observable<any> {
+    return this.webApiService.get(httpLink.getAllEnterprises);
+  }
+  public getEnterprisesDetailById(model: number): Observable<any> {
+    return this.webApiService.get(httpLink.getEnterprisesDetailById + model);
+  }
+  public saveEnterprises(model: any): Observable<any> {
+    return this.webApiService.post(httpLink.saveEnterprises, model);
   }
 }

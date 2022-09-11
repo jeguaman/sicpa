@@ -85,7 +85,7 @@
                             <label class="p-t-b-10">Age<span class="requiredStar">*</span></label>
                         </div>
                         <div class="col-sm-9">
-                            <input type="text" numberclass="form-control" id="Age" required maxlength="2"
+                            <input type="text" class="form-control" id="Age" required maxlength="2"
                                 [(ngModel)]="addEmployeeForm.age" name="Age" #Age="ngModel" pattern="^\d{2}$">
                             <div *ngIf="Age.errors && isSubmitted" class="alert alert-danger validationError">
                                 <div [hidden]="!Age.errors?.['required']">
