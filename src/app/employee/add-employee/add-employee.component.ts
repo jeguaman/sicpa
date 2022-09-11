@@ -25,21 +25,18 @@ export class AddEmployeeComponent implements OnInit {
     if (isValid) {
       this.httpProvider.saveEmployee(this.addEmployeeForm).subscribe(async data => {
         if (data != null && data.body != null) {
-          if (data != null && data.body != null) {
-            var resultData = data.body;
-            if (resultData != null && resultData.isSuccess) {
-              this.toastr.success(resultData.message);
-              setTimeout(() => {
-                this.router.navigate(['/Employees']);//Home
-              }, 500);
-            }
+          if (data != null && data.status === 201 ) {
+            this.toastr.success("Employee was added");
+            setTimeout(() => {
+              this.router.navigate(['/Employees']);
+            }, 500);
           }
         }
       },
         async error => {
           this.toastr.error(error.message);
           setTimeout(() => {
-            this.router.navigate(['/Employees']);//Home
+            this.router.navigate(['/Employees']);
           }, 500);
         });
     }
@@ -47,12 +44,12 @@ export class AddEmployeeComponent implements OnInit {
 }
 
 export class employeeForm {
-  Name: string = "";
-  Surname: string = "";
-  Status: boolean = true;
-  Age: number = 1;
-  Email: string = "";
-  Position: string = "";
-  ModifiedBy: string = "jeguamanMod";
-  ModifiedDate: Date = new Date();
+  name: string = "";
+  surname: string = "";
+  status: boolean = true;
+  age: number = 0;
+  email: string = "";
+  position: string = "";
+  createdBy: string = "jeguaman";
+  createdDate: Date = new Date();
 }

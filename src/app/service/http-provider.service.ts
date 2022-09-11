@@ -8,7 +8,7 @@ var httpLink = {
   getAllEmployees: apiUrl + "/employees",
   //deleteEmployeeById: apiUrl + "/api/employee/deleteEmployeeById",
   //getEmployeeDetailById: apiUrl + "/api/employee/getEmployeeDetailById",
-  saveEmployee: apiUrl + "/employee/saveEmployee"
+  saveEmployee: apiUrl + "/employees/register"
 }
 
 @Injectable({
