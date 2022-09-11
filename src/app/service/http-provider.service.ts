@@ -7,7 +7,7 @@ var apiUrl = "http://localhost:8090/sicpa/api";
 var httpLink = {
   getAllEmployees: apiUrl + "/employees",
   //deleteEmployeeById: apiUrl + "/api/employee/deleteEmployeeById",
-  //getEmployeeDetailById: apiUrl + "/api/employee/getEmployeeDetailById",
+  getEmployeeDetailById: apiUrl + "/employees/",
   saveEmployee: apiUrl + "/employees/register"
 }
 
@@ -22,11 +22,12 @@ export class HttpProviderService {
   }
   /*public deleteEmployeeById(model: any): Observable<any> {
     return this.webApiService.post(httpLink.deleteEmployeeById + '?employeeId=' + model, "");
-  }
-  public getEmployeeDetailById(model: any): Observable<any> {
-    return this.webApiService.get(httpLink.getEmployeeDetailById + '?employeeId=' + model);
   }*/
+  public getEmployeeDetailById(model: number): Observable<any> {    
+    return this.webApiService.get(httpLink.getEmployeeDetailById + model);
+  }
   public saveEmployee(model: any): Observable<any> {
+    console.log("MOdel:" + model);
     return this.webApiService.post(httpLink.saveEmployee, model);
   }
 }

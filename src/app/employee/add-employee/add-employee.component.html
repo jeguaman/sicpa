@@ -70,7 +70,7 @@
                             <label for="Position" class="p-t-b-10">Position<span class="requiredStar">*</span></label>
                         </div>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="Name" required maxlength="255"
+                            <input type="text" class="form-control" id="Position" required maxlength="255"
                                 [(ngModel)]="addEmployeeForm.position" name="Position" #Position="ngModel">
                             <div *ngIf="Position.errors && isSubmitted" class="alert alert-danger validationError">
                                 <div [hidden]="!Position.errors?.['required']">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-sm-9">
                             <input type="text" numberclass="form-control" id="Age" required maxlength="2"
-                                [(ngModel)]="addEmployeeForm.age" name="Age" #Age="ngModel" pattern="[0-9]{1,2}$">
+                                [(ngModel)]="addEmployeeForm.age" name="Age" #Age="ngModel" pattern="^\d{2}$">
                             <div *ngIf="Age.errors && isSubmitted" class="alert alert-danger validationError">
                                 <div [hidden]="!Age.errors?.['required']">
                                     Email is required

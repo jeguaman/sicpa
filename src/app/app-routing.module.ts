@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'Enterprises', component: ViewEnterpriseComponent },
   { path: 'Departments', component: ViewDepartmentComponent },
   { path: 'Employees', component: ViewEmployeeComponent },
-  { path: 'EmployeesEdit', component: EditEmployeeComponent },
+  { path: 'EmployeesEdit/:id', component: EditEmployeeComponent },
   { path: 'EmployeesAdd', component: AddEmployeeComponent }
 ];
 @NgModule({
