@@ -1,1 +1,75 @@
-<p>edit-department works!</p>
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <br />
+            <br />
+            <br />
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4><b>Update Department</b></h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#" routerLink="/Departments" class="btn btn-success back"><i
+                                class='fas fa-arrow-circle-left'></i>
+                            Back</a>
+                    </div>
+                </div>
+            </div>
+            <form #departmentForm="ngForm">
+                <div class="table-content">
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label for="Name" class="p-t-b-10">Name<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Name" required maxlength="255"
+                                [(ngModel)]="editDepartmentForm.name" name="Name" #FirstName="ngModel">
+                            <div *ngIf="FirstName.errors && isSubmitted" class="alert alert-danger validationError">
+                                <div [hidden]="!FirstName.errors?.['required']">
+                                    Name is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label class="p-t-b-10">Description<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="Description" required
+                                [(ngModel)]="editDepartmentForm.description" name="Description"
+                                #Description="ngModel">></textarea>
+                            <div *ngIf="Description.errors && isSubmitted" class="alert alert-danger validationError">
+                                <div [hidden]="!Description.errors?.['required']">
+                                    Description is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group p-10 row">
+                        <div class="col-sm-3">
+                            <label class="p-t-b-10">Phone<span class="requiredStar">*</span></label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Phone" required maxlength="10"
+                                [(ngModel)]="editDepartmentForm.phone" name="Phone" #Phone="ngModel"
+                                pattern="^\d{3}\d{3}\d{4}$">
+                            <div *ngIf="Phone.errors && isSubmitted" class="alert alert-danger validationError">
+                                <div [hidden]="!Phone.errors?.['required']">
+                                    Phone is required
+                                </div>
+                                <div [hidden]="!Phone.errors?.['touched'] && !Phone.errors?.['pattern']">
+                                    Phone is invalid
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-footer">
+                    <button class="btn btn-success" (click)="EditDepartment(departmentForm.form.valid)">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

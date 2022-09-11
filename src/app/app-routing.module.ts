@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddDepartmentComponent } from './departments/add-department/add-department.component';
+import { EditDepartmentComponent } from './departments/edit-department/edit-department.component';
 import { ViewDepartmentComponent } from './departments/view-department/view-department.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
@@ -15,10 +17,12 @@ const routes: Routes = [
   { path: 'Enterprises', component: ViewEnterpriseComponent },
   { path: 'Departments', component: ViewDepartmentComponent },
   { path: 'Employees', component: ViewEmployeeComponent },
-  { path: 'EmployeesEdit/:id', component: EditEmployeeComponent },
   { path: 'EmployeesAdd', component: AddEmployeeComponent },
+  { path: 'EmployeesEdit/:id', component: EditEmployeeComponent },
   { path: 'EnterpriseAdd', component: AddEnterpriseComponent },
-  { path: 'EnterpriseEdit/:id', component: EditEnterpriseComponent }
+  { path: 'EnterpriseEdit/:id', component: EditEnterpriseComponent },
+  { path: 'DepartmentAdd', component: AddDepartmentComponent },
+  { path: 'DepartmentEdit/:id', component: EditDepartmentComponent }
 
 ];
 @NgModule({
