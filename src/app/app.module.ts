@@ -17,6 +17,7 @@ import { EditDepartmentComponent } from './departments/edit-department/edit-depa
 import { AddDepartmentComponent } from './departments/add-department/add-department.component';
 import { ViewEmployeeComponent } from './employee/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
+import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.co
     ViewEnterpriseComponent,
     ViewDepartmentComponent,
     EditDepartmentComponent,
-    AddDepartmentComponent
+    AddDepartmentComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,

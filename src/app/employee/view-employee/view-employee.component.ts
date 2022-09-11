@@ -66,6 +66,6 @@ export class ViewEmployeeComponent implements OnInit {
   }
 
   AddEmployee() {
-    this.router.navigate(['AddEmployee']);
+    this.router.navigate(['EmployeesAdd']);
   }
 }
